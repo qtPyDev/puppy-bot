@@ -34,15 +34,17 @@ def send_post(profile, post_text):
     current_time = strftime('%I:%M %p', gmtime())
 
     post = client.send_post(post_text)
-    log.info(f'''
 
+    post_info = f'''
         posted as {profile.display_name}
         {current_date} at {current_time}
 
         uri: {post.uri}
         cid: {post.cid}
+    '''
 
-    ''')
+    log.info(post_info)
+    print(post_info)
 
     return post
 
@@ -63,7 +65,7 @@ def query_feed(query):
             }
         )
 
-    print(posts)
+    print(f'collected {len(posts)} posts...')
     return posts
 
 
@@ -76,7 +78,7 @@ def like_post(post):
     except Exception as e:
         log.info(e)
 
-    print(post)
+    print(f'liked {post.uri}')
     return uri
 
 
@@ -89,5 +91,5 @@ def repost_post(post):
     except Exception as e:
         log.info(e)
 
-    print(post)
+    print(f'reposted {post.uri}')
     return uri
