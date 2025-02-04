@@ -3,7 +3,7 @@
 APP_NAME = 'BlueSky bot service'
 CMD_ESC = 'Ctrl+C'
 
-QUERY = 'puppy*'
+QUERY = 'puppy art'
 
 LEXICON = [
     'so puppy',

@@ -78,7 +78,7 @@ def like_post(post):
     except Exception as e:
         log.info(e)
 
-    print(f'liked {post.uri}')
+    print(f'liked {uri}')
     return uri
 
 
@@ -91,5 +91,5 @@ def repost_post(post):
     except Exception as e:
         log.info(e)
 
-    print(f'reposted {post.uri}')
+    print(f'reposted {uri}')
     return uri
